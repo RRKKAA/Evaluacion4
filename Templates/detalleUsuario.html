@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Usuario</title>
+</head>
+<body>
+    <h1>Detalles del Usuario</h1>
+    <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+    <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+    <p><strong>Ciudad:</strong> {{ usuario.ciudad }}</p>
+    <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+
+    <h2>Videojuegos del Usuario</h2>
+    <a href="/videojuegos/">Ver Videojuegos</a>
+
+    <h2>Computadoras del Usuario</h2>
+    <a href="/computadoras/">Ver Computadoras</a>
+
+    <a href="../usuarios">Volver</a>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+
+  <title>Listado   
+ de Computadoras</title>
+</head>
+<body class="container mt-5">
+  <div class="alert alert-info display-1 text-center">Listado de Computadoras</div>
+
+  {% if computadoras %}
+
+    <table class="table table-striped table-inverse table-responsive">
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Disco</th>
+          <th>GPU</th>
+          <th>CPU</th>
+          <th>RAM</th>
+          <th>-</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for computadora in computadoras %}
+          <tr>
+            <td>{{ computadora.marca }}</td>
+            <td>{{ computadora.disco }} GB</td>
+            <td>{{ computadora.gpu }}</td>
+            <td>{{ computadora.cpu }} GHz</td>
+            <td>{{ computadora.ram }} GB</td>
+            <td><a href="/actualizarComputadora/{{ computadora.id }}" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i>actualizar</td>
+            <td><a href="/eliminarComputadora/{{ computadora.id }}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i>eliminar</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  {% else %}
+
+    <div class="alert alert-primary" role="alert">
+      <strong>No se encuentran computadoras registradas.</strong>
+    </div>
+
+  {% endif %}
+
+  <a href="../usuarios" class="btn btn-danger">Volver</a>
+  <a href="../agregarComputadora" class="btn btn-info float-end">Agregar Computadora</a>
+  
+</body>
+</html>
